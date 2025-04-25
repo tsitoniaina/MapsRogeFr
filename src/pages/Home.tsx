@@ -18,7 +18,7 @@ export default function Home() {
         };
 
         try {
-          const response = await fetch('http://localhost:4000/location', {
+          const response = await fetch('https://empty-mighty-diagram.glitch.me/location', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(coords)
@@ -52,7 +52,7 @@ export default function Home() {
         className="btn btn-primary d-flex align-items-center gap-2"
         style={{ cursor: 'pointer' }}
       >
-        <i className="bi bi-geo-alt-fill"></i> Like
+        <i className="bi bi-geo-alt-fill"></i> coucou Like
       </a>
       
       {message && (
