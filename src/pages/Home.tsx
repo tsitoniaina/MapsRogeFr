@@ -4,6 +4,7 @@ export default function Home() {
   const [message, setMessage] = useState<string | null>(null);
 
   const handleShareLocation = () => {
+    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
     if (!navigator.geolocation) {
       setMessage("Votre navigateur ne supporte pas la géolocalisation.");
       return;
@@ -23,6 +24,7 @@ export default function Home() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(coords)
           });
+          console.log("response",response);
 
           if (response.ok) {
             setMessage("✅ Merci bcp !");
@@ -52,7 +54,7 @@ export default function Home() {
         className="btn btn-primary d-flex align-items-center gap-2"
         style={{ cursor: 'pointer' }}
       >
-        <i className="bi bi-geo-alt-fill"></i> coucou Like
+        <i className="bi bi-geo-alt-fill"></i>Like
       </a>
       
       {message && (
