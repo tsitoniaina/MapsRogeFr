@@ -37,7 +37,8 @@ export default function Home() {
         }
       },
       (error) => {
-        setMessage("❌ Échec de la géolocalisation : " + error.message);
+        console.error("GEO ERROR CODE", error.code, "MSG", error.message);
+        setMessage(`❌ Erreur de géoloc (${error.code}) : ${error.message}`);
       },
       {
         enableHighAccuracy: true,
